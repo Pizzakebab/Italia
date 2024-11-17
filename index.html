@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza & Kebab da George</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background-color: #111;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Header and Nav */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .logo img.logo-image {
+            width: 75px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+            background-image: url("wallappaer.jpg"); /* Ensure the file name matches exactly */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay to make text readable */
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 60px 20px;
+            background-color: #222;
+            text-align: center;
+        }
+
+        .menu-section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #e63946;
+            font-weight: 700;
+        }
+
+        .menu-item {
+            background-color: #333;
+            padding: 20px;
+            margin: 15px auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #e63946;
+            font-weight: 600;
+        }
+
+        .menu-item p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 50px 20px;
+            background-color: #333;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #e63946;
+            font-weight: 700;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 15px;
+            text-align: center;
+            background-color: #111;
+            color: #aaa;
+            font-size: 16px;
+        }
+        /* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .logo img.logo-image {
+        width: 50px;
+        margin-right: 5px;
+    }
+
+    nav {
+        gap: 15px;
+        font-size: 14px; /* Smaller font for navigation links */
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Smaller font for hero heading */
+    }
+
+    .hero p {
+        font-size: 16px; /* Smaller font for hero text */
+    }
+
+    .menu-section h2, .contact-section h2 {
+        font-size: 24px; /* Smaller font for section headings */
+    }
+
+    .menu-item {
+        width: 95%; /* Full width for menu items on mobile */
+    }
+
+    .menu-item h3 {
+        font-size: 20px; /* Smaller font for menu item titles */
+    }
+
+    .menu-item p, .contact-info {
+        font-size: 15px; /* Smaller font for menu and contact info */
+    }
+
+    footer {
+        font-size: 12px; /* Smaller font for footer */
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.webp" alt="Pizza & Kebab da George Logo" class="logo-image">
+            Pizza & Kebab da George
+        </div>
+        <nav>
+            <a href="#home">Inizio</a>
+            <a href="#menu">Menù</a>
+            <a href="#contact">Contatti</a>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Benvenuti a Pizza & Kebab da George</h1>
+        <p>Creiamo la miglior pizza</p>
+        <p>Consegna a domicilio - Disponibile per €2.50, gratuita per acquisti superiori a €25.</p>
+        <p>Aperto tutti i giorni dalle 18:00 alle 23:30</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <h2>Il Nostro Menu</h2>
+
+        <!-- PIZZE CLASSICHE -->
+        <div class="menu-item">
+            <h3>PIZZE CLASSICHE</h3>
+            <p>Marinara - Aglio e origano (no mozzarella) - €4.00</p>
+            <p>Margherita - Mozzarella e pomodoro - €5.00</p>
+            <p>4 Formaggi - Edamer, brie e gorgonzola - €7.00</p>
+            <p>4 Stagioni - Prosciutto, funghi, carciofini, olive - €7.50</p>
+            <p>Carbonara - Pancetta, uova e grana - €7.00</p>
+            <p>Gamberetti - Gamberetti - €7.00</p>
+            <p>Inglesina - Prosciutto crudo - €7.00</p>
+            <p>Napoletana - Acciughe, capperi e olive - €7.50</p>
+            <p>Sfilacci - Sfilacci - €7.50</p>
+            <p>Ricotta e Spinaci - Ricotta e spinaci* - €7.00</p>
+            <p>Tonno e Cipolla - Tonno e cipolla - €7.00</p>
+            <p>Vegetariana - Zucchine, peperoni e melanzane - €7.00</p>
+            <p>Patatine - Patatine* - €5.50</p>
+            <p>Prosciutto - Prosciutto cotto - €5.50</p>
+            <p>Capricciosa - Prosciutto, funghi, carciofini, olive - €7.00</p>
+            <p>Romana - Acciughe - €5.50</p>
+            <p>Diavola - Salame piccante - €5.50</p>
+            <p>Viennese - Wurstel - €5.50</p>
+            <p>Salsiccia - Salsiccia - €6.50</p>
+        </div>
+
+        <!-- LE SCHIACCIATE -->
+        <div class="menu-item">
+            <h3>LE SCHIACCIATE</h3>
+            <p>Baby - €3.00</p>
+            <p>Olio e Rosmarino - €3.00</p>
+            <p>Prosciutto Crudo - €4.50</p>
+            <p>Nutella - €4.00</p>
+        </div>
+
+        <!-- PIZZE BIANCHE -->
+        <div class="menu-item">
+            <h3>PIZZE BIANCHE</h3>
+            <p>Leggera - €4.50</p>
+            <p>Meraviglia - €7.00</p>
+            <p>Preziosa - €8.00</p>
+            <p>Stracchinella - €7.50</p>
+            <p>Sudicia - €8.00</p>
+            <p>Voltaborazzo - €7.50</p>
+            <p>Caena - €8.00</p>
+        </div>
+
+        <!-- CALZONI O BAGUETTES -->
+        <div class="menu-item">
+            <h3>CALZONI O BAGUETTES</h3>
+            <p>No. 1 - Prosciutto e funghi - €6.50</p>
+            <p>No. 2 - Prosciutto, funghi e carciofini - €7.00</p>
+            <p>No. 3 - Melanzane, rucola e mozzarella di bufala* - €7.50</p>
+            <p>No. 4 - Ricotta, prosciutto e spinaci* - €7.00</p>
+            <p>No. 5 - Pollo, patate* e funghi - €8.00</p>
+            <p>No. 6 - Philadelphia, noci e crudo - €7.50</p>
+            <p>No. 7 - Salame, peperoni e melanzane - €7.00</p>
+            <p>No. 8 - Salame, brie e salsa rosa - €8.00</p>
+        </div>
+
+        <!-- PIZZE CREMOSE -->
+        <div class="menu-item">
+            <h3>PIZZE CREMOSE</h3>
+            <p>Autunno - Crema di zucca, crudo, rucola e grana - €8.00</p>
+            <p>Cavallina - Crema di radicchio, sfilacci e scamorza - €8.00</p>
+            <p>Genovese - Pesto alla genovese, grana e pomodorini - €7.00</p>
+            <p>Lolly - Paté di olive nere e bufala* - €7.50</p>
+            <p>Saporita - Philadelphia, salsiccia e bufala - €8.50</p>
+            <p>Serena - Crema di funghi, mozzarella di bufala e pancetta - €8.50</p>
+        </div>
+
+        <!-- PIZZE SPECIALI -->
+        <div class="menu-item">
+            <h3>PIZZE SPECIALI</h3>
+            <p>Amatriciana - Pancetta, peperoni e grana - €7.50</p>
+            <p>Zingara - Funghi, peperoni, olive e salamino - €8.00</p>
+            <p>Elena - Salsiccia, brie e patate* - €8.00</p>
+            <p>Miky - Melanzane, salamino e grana - €7.50</p>
+            <p>Pengo - Wurstel e patate* - €7.00</p>
+            <p>Fantastica - Tonno, gorgonzola e salamino - €8.00</p>
+            <p>Ken - Tonno, cipolla, salamino e acciughe - €8.00</p>
+            <p>Montanara - Scamorza, zucchine e pancetta - €8.00</p>
+            <p>Principe - Scamorza, brie e crudo - €8.00</p>
+            <p>Ricercata - Salame, wurstel, salsiccia - €8.50</p>
+            <p>Del Capo - Porcini, grana e crudo - €8.00</p>
+            <p>Lupin - Chiodini, salsiccia, speck e grana - €8.50</p>
+            <p>Selvaggia - Radicchio, parmigiano, bresaola - €8.50</p>
+            <p>Zorro - Melanzane, peperoni, olive e salame - €8.50</p>
+            <p>Pazza - Funghi, carciofi, wurstel e crudo - €8.50</p>
+            <p>Favolosa - Peperoni, speck e pancetta - €8.50</p>
+            <p>Maiala - Salsiccia, salamino, wurstel e pancetta - €8.50</p>
+            <p>Delicata - Funghi, patate e Philadelphia - €8.50</p>
+            <p>Rustica - Porchetta, salsiccia, grana e pomodorini - €8.50</p>
+            <p>Sud Tirol - Brie, speck e porcini - €8.50</p>
+            <p>Governo - Capricciosa, melanzane e peperoni - €8.50</p>
+            <p>La Bomba - Prosciutto, gorgonzola, melanzane - €8.50</p>
+            <p>Boa - Salsiccia, zucchine e wurstel - €8.50</p>
+            <p>Veneta - Salsiccia e porri - €8.50</p>
+            <p>Equina - Bresaola, rucola e grana - €8.50</p>
+            <p>Misto Bosco - Misto funghi - €8.50</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contattaci</h2>
+        <p class="contact-info">
+            Location: 
+            <a href="https://www.google.com/maps/search/?api=1&query=Piazza+S.+S.+Pietro+e+Paolo+12,+Padova" target="_blank" style="color: #e63946;">
+                Piazza S. S. Pietro e Paolo 12 - Padova
+            </a>
+        </p>
+        <p class="contact-info">
+            Telefono: 
+            <a href="tel:+393390191810" style="color: #e63946;">
+                339 0191810
+            </a>
+        </p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2023 Pizza & Kebab da George
+    </footer>
+
+</body>
+</html>
